@@ -1,0 +1,2 @@
+debian/bin/olegcoind usr/bin
+src/olegcoind usr/lib/olegcoin
