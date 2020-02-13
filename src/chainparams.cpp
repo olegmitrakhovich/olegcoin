@@ -79,41 +79,41 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1581617132;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 0;
+        genesis.nNonce   = 1495627;
         //mining genesis block
-        hashGenesisBlock = uint256("0x01");
-        if(true && genesis.GetHash() != hashGenesisBlock)
-                      {
-                        printf("Searching for genesis block...\n");
-                        uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
-                        uint256 thash;
-
-                        while (true)
-                        {
-                          thash = genesis.GetHash();
-                          if (thash <= hashTarget)
-                             break;
-                          if((genesis.nNonce & 0xFFF) == 0)
-                          {
-                            printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
-                          }
-                          ++genesis.nNonce;
-                          if (genesis.nNonce == 0)
-                          {
-                            printf("NONCE WRAPPED, incrementing time\n");
-                            ++ genesis.nTime;
-                          }
-                        }
-          printf("genesis.nTime = %u \n", genesis.nTime);
-          printf("genesis.nNonce = %u \n", genesis.nNonce);
-          printf("genesis.nVersion = %u \n", genesis.nVersion);
-          printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-          printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str());
-                      }
+        //hashGenesisBlock = uint256("0x01");
+        //if(true && genesis.GetHash() != hashGenesisBlock)
+        //              {
+        //                printf("Searching for genesis block...\n");
+        //                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+        //                uint256 thash;
+        //
+        //                while (true)
+        //                {
+        //                  thash = genesis.GetHash();
+        //                  if (thash <= hashTarget)
+        //                     break;
+        //                  if((genesis.nNonce & 0xFFF) == 0)
+        //                  {
+        //                    printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+        //                  }
+        //                  ++genesis.nNonce;
+        //                  if (genesis.nNonce == 0)
+        //                  {
+        //                    printf("NONCE WRAPPED, incrementing time\n");
+        //                    ++ genesis.nTime;
+        //                  }
+        //                }
+        //  printf("genesis.nTime = %u \n", genesis.nTime);
+        //  printf("genesis.nNonce = %u \n", genesis.nNonce);
+        //  printf("genesis.nVersion = %u \n", genesis.nVersion);
+        //  printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        //  printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str());
+        //              }
         //mining genesis block
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x01"));
-        assert(genesis.hashMerkleRoot == uint256("0x12630d16a97f24b287c8c2594dda5fb98c9e6c70fc61d44191931ea2aa08dc90"));
+        assert(hashGenesisBlock == uint256("0x0000040d04e75284e7c2d0ee762e40feddb53269ebfe5a6951ecdfb2d48557ff"));
+        assert(genesis.hashMerkleRoot == uint256("0x34a86bfa80850659f79469ad6c6b09d852d543b9ad443a07089f24e9763c1692"));
 
         vSeeds.push_back(CDNSSeedData("vasin.nl", "dnsseed.vasin.nl"));
 
@@ -163,9 +163,42 @@ public:
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 216178;
+        genesis.nNonce = 1538512;
+        hashGenesisBlock = uint256("0x01");
+        //mining genesis block
+        //hashGenesisBlock = uint256("0x01");
+        //if(true && genesis.GetHash() != hashGenesisBlock)
+        //              {
+        //                printf("Searching for genesis block...\n");
+        //                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+        //                uint256 thash;
+        //
+        //                while (true)
+        //                {
+        //                  thash = genesis.GetHash();
+        //                  if (thash <= hashTarget)
+        //                     break;
+        //                  if((genesis.nNonce & 0xFFF) == 0)
+        //                  {
+        //                    printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+        //                  }
+        //                  ++genesis.nNonce;
+        //                  if (genesis.nNonce == 0)
+        //                  {
+        //                    printf("NONCE WRAPPED, incrementing time\n");
+        //                    ++ genesis.nTime;
+        //                  }
+        //                }
+        //  printf("genesis.nTime = %u \n", genesis.nTime);
+        //  printf("genesis.nNonce = %u \n", genesis.nNonce);
+        //  printf("genesis.nVersion = %u \n", genesis.nVersion);
+        //  printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        //  printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str());
+        //              }
+        //mining genesis block
+
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000724595fb3b9609d441cbfb9577615c292abf07d996d3edabc48de843642d"));
+        assert(hashGenesisBlock == uint256("0x000041f4a49ebce06d6421129c9ced8cee76ad700f4aadd4753cb106fd9ecdc6"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -196,13 +229,46 @@ public:
         pchMessageStart[2] = 0xbf;
         pchMessageStart[3] = 0xd0;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
-        genesis.nTime = 1411111111;
+        genesis.nTime = 1581617132;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 2;
+        genesis.nNonce = 1495627;
+        
+        //mining genesis block
+        //hashGenesisBlock = uint256("0x01");
+        //if(true && genesis.GetHash() != hashGenesisBlock)
+        //              {
+        //                printf("Searching for genesis block...\n");
+        //                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+        //                uint256 thash;
+        //
+        //                while (true)
+        //                {
+        //                  thash = genesis.GetHash();
+        //                  if (thash <= hashTarget)
+        //                     break;
+        //                  if((genesis.nNonce & 0xFFF) == 0)
+        //                  {
+        //                    printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+        //                  }
+        //                  ++genesis.nNonce;
+        //                  if (genesis.nNonce == 0)
+        //                  {
+        //                    printf("NONCE WRAPPED, incrementing time\n");
+        //                    ++ genesis.nTime;
+        //                  }
+        //                }
+        //  printf("genesis.nTime = %u \n", genesis.nTime);
+        //  printf("genesis.nNonce = %u \n", genesis.nNonce);
+        //  printf("genesis.nVersion = %u \n", genesis.nVersion);
+        //  printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        //  printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str());
+        //              }
+        //mining genesis block
+
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 10100;
         strDataDir = "regtest";
-        assert(hashGenesisBlock == uint256("0x523dda6d336047722cbaf1c5dce622298af791bac21b33bf6e2d5048b2a13e3d"));
+        assert(hashGenesisBlock == uint256("0x408cc8fb5b296c4e0257862dd4943f78935a254b596e9211f0eb60c11c5dc1b0"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
